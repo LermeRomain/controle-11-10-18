@@ -22,6 +22,6 @@
 </script>
 <form>
     <input type="submit" name="Btn2" value="Voter pour une conférence" onclick="VoterConference();">
-</form>
+    </form>
 </body>
 </html>

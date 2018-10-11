@@ -3,11 +3,12 @@ function CreerConference() {
     (
         {
             type:"get",
-            url:"index.php/Welcome/AfficherNumConf",
+            url:"Welcome/AfficherNumConf",
             success:function(data)
             {
                 $('#divConfererences').empty();
                 $('#divConferences').append(data);
+                alert(" Conferences créer");
             },
             error:function()
             {
@@ -21,11 +22,13 @@ function VoterConference() {
     (
         {
             type:"get",
-            url:"index.php/Welcome/AfficherConferences",
+            url:"Welcome/AfficherConferences",
+            data:"TITRE="+TITRE,
             success:function(data)
             {
                 $('#divConferences').empty();
                 $('#divConferences').append(data);
+                alert("Vote comptabilisé");
             },
             error:function()
             {
@@ -33,4 +36,29 @@ function VoterConference() {
             }
         }
     );
+}
+function ValiderVote()
+{
+    
+    var tabTITRE = Array();
+    $("input[type=checkbox]").each(function(){
+        tabTITRE.push($(this).is(":checked"));
+    });
+
+
+    $.ajax(
+        {
+            type:"get",
+            url:"index.php/CtrlActivites/ValiderVote",
+            data:"tab1="+tabTITRE,
+            success:function(data)
+            {
+                alert("OK");
+            },
+            error:function()
+            {
+                alert('Erreur SQL');
+            }
+        }
+        );
 }

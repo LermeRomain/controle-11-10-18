@@ -14,6 +14,11 @@ class Welcome extends CI_Controller {
         $this->load->model('Model_Conferences');
         $data['lesConferences'] = $this->Model_Conferences->getConferences($TITRE);
         $this->load->view('AfficherConferences', $data);
+	}
+	function ValiderVote()
+    {
+        $this->load->model('Model_Vote');
+        $this->Model_Vote->ValiderVote($_GET['tab1']);
     }
 
 	
