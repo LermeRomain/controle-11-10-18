@@ -14,36 +14,14 @@
     <br>
 
     <script type="text/javascript">
-function CreerConference() {
-    $.ajax
-    (
-        {
-            type:"get",
-            url:"index.php/Welcome/AfficherNumConf",
-            success:function(data)
-            {
-                $('#divConfererences').empty();
-                $('#divConferences').append(data);
-            },
-            error:function()
-            {
-                alert("Impossible de lire les Conferences");
-            }
-        }
-    );
-}
-</script>
-<form>
-    <input type="submit" name="Btn1" value="Créer une conférence" onclick="CreerConference();">
-</form>
+    </script>
+    <form>
+        <input type="submit" name="Btn1" value="Créer une conférence" onclick="CreerConference();">
+    </form>
 <script type="text/javascript">
-function VoterConference() {
-   
-}
 </script>
 <form>
     <input type="submit" name="Btn2" value="Voter pour une conférence" onclick="VoterConference();">
 </form>
-        
 </body>
 </html>
